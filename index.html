@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Geometry Genius</title>
+    <link rel="stylesheet" href="style.css" />
     <!--Tailwind CSS & Daisy Ui CDN-->
     <link
       href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css"
@@ -23,40 +24,79 @@
       <button class="btn btn-primary font-bold text-2xl">Blog</button>
     </header>
     <main class="container mx-auto">
-        <div class="flex ">
-            <div class="flex justify-around w-3/4">
-                <div class="card flex flex-col items-center gap-4">
-                  <img class="w-48" src="images/triangle.png" alt="" />
-                  <h2>Triangle</h2>
-                  <p>Area(A) = 0.5 x b x h</p>
-                  <div>
-                    <input class="w-20 p-2 bg-slate-300" type="text" placeholder="b" /> <span>cm</span>
-                    <input class="w-20 p-2 bg-slate-300" type="text" placeholder="h" /> <span>cm</span>
-                  </div>
-                </div>
-                <div class="card flex flex-col items-center gap-4">
-                  <img class="w-48" src="images/triangle.png" alt="" />
-                  <h2>Triangle</h2>
-                  <p>Area(A) = 0.5 x b x h</p>
-                  <div>
-                    <input class="w-20 p-2 bg-slate-300" type="text" placeholder="b" /> <span>cm</span>
-                    <input class="w-20 p-2 bg-slate-300" type="text" placeholder="h" /> <span>cm</span>
-                  </div>
-                </div>
-                <div class="card flex flex-col items-center gap-4">
-                  <img class="w-48" src="images/triangle.png" alt="" />
-                  <h2>Triangle</h2>
-                  <p>Area(A) = 0.5 x b x h</p>
-                  <div>
-                    <input class="w-20 p-2 bg-slate-300" type="text" placeholder="b" /> <span>cm</span>
-                    <input class="w-20 p-2 bg-slate-300" type="text" placeholder="h" /> <span>cm</span>
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h1>Area Calculation</h1>
-              </div>
+      <div class="flex justify-between">
+        <div class="flex justify-around w-3/4">
+          <div class="card border p-9 flex flex-col items-center gap-4 w-80">
+            <img class="h-48" src="images/triangle.png" alt="" />
+            <h2 class="text-3xl">Triangle</h2>
+            <p>Area(A) = 0.5 x b x h</p>
+            <div>
+              <input
+                id="triangle-base"
+                class="w-20 p-2 bg-slate-300"
+                type="text"
+                placeholder="b"
+              />
+              <span>cm</span>
+              <input
+                id="triangle-height"
+                class="w-20 p-2 bg-slate-300"
+                type="text"
+                placeholder="h"
+              />
+              <span>cm</span>
+            </div>
+            <div>
+              <p class="text-2xl">Area: <span id="triangle-area"></span>cm<sup>2</sup></p>
+            </div>
+            <button onclick="calculateTriangleArea()" id="triangle-btn" class="bg-teal-500 p-4 rounded-lg w-full btn">Calculate</button>
+
+          </div>
+          <div class="card border p-9 flex flex-col items-center gap-4 w-80">
+            <img class="h-48" src="images/rectangle.png" alt="" />
+            <h2 class="text-3xl">Rectangle</h2>
+            <p>Area(A) = W x L</p>
+            <div>
+              <input
+                class="w-20 p-2 bg-slate-300"
+                type="text"
+                placeholder="W"
+              />
+              <span>cm</span>
+              <input
+                class="w-20 p-2 bg-slate-300"
+                type="text"
+                placeholder="L"
+              />
+              <span>cm</span>
+            </div>
+            <button class="bg-teal-500 p-4 rounded-lg w-full btn">Calculate</button>
+          </div>
+          <div class="card border p-9 flex flex-col items-center gap-4 w-80">
+            <img class="h-48" src="images/parallelogram.png" alt="" />
+            <h2 class="text-3xl">Parallelogram</h2>
+            <p>Area(A) = 0.5 x b x h</p>
+            <div>
+              <input
+                class="w-20 p-2 bg-slate-300"
+                type="text"
+                placeholder="b"
+              />
+              <span>cm</span>
+              <input
+                class="w-20 p-2 bg-slate-300"
+                type="text"
+                placeholder="h"
+              />
+              <span>cm</span>
+            </div>
+            <button class="bg-teal-500 p-4 rounded-lg w-full btn">Calculate</button>
+          </div>
         </div>
+        <div class="border w-1/5">
+          <h1 id="result" class="text-center ">Area Calculation</h1>
+        </div>
+      </div>
     </main>
 
     <script src="functions.js"></script>
